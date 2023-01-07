@@ -20295,12 +20295,16 @@ GameObject:
   - component: {fileID: 1224422401827757321}
   - component: {fileID: 1224422401827757320}
   - component: {fileID: 1224422401827757326}
+  - component: {fileID: 6662475056557839193}
+  - component: {fileID: 7725615152741403349}
+  - component: {fileID: 277643574655577799}
+  - component: {fileID: 2598968979533799828}
+  - component: {fileID: 8446136404955943917}
   - component: {fileID: 1224422401827757324}
   - component: {fileID: 1224422401827757322}
   - component: {fileID: 1224422401827757323}
   - component: {fileID: 1224422401827757327}
   - component: {fileID: 1224422401827757312}
-  - component: {fileID: 1948153416}
   m_Layer: 9
   m_Name: Player_Sonic
   m_TagString: Player
@@ -20377,6 +20381,8 @@ MonoBehaviour:
   InputDeadZone: 0.1
   InputDir: {x: 0, y: 0, z: 0}
   GroundNormal: {x: 0, y: 0, z: 0}
+  GroundAngle: 0
+  GroundTangent: {x: 0, y: 0, z: 0}
   GroundLayer:
     serializedVersion: 2
     m_Bits: 307
@@ -20417,7 +20423,7 @@ MonoBehaviour:
   Gravity: {x: 0, y: -36, z: 0}
   Grounded: 0
   MaxAngleDifference: 45
-  NormalCorrectionSpeed: 5
+  NormalCorrectionSpeed: 3
   AccelRate: 8
   MinDecelRate: 1.01
   MaxDecelRate: 1.03
@@ -20549,6 +20555,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   RollingSlopeMultiplier: 1.5
   RollSteering: 4
+  MaxStepHeight: 0.35
+  MinStepHeight: 0.01
+  MinCheckDistance: 0.35
+  MaxNormal: 0.99
+  SpeedStepThreshold: 5
   MaxFallingSpeed: 60
   SkidInputThreshold: -0.3
 --- !u!114 &1224422401827757326
@@ -20563,64 +20574,125 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d948c469b00d148a97c6f43c1cc3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultState:
-    player: {fileID: 0}
-    actions: {fileID: 0}
-    RollingStartSpeed: 1
-    col: {fileID: 1224422401827757334}
-    CrouchHeight: 0.67
-    CrouchOffset: -0.028
-  jumpState:
-    player: {fileID: 0}
-    actions: {fileID: 0}
-    OnJumpAction: 1
-    InitialJumpForce: 0.75
-    JumpSpeed: 0.6
-    MaxJumpTime: 0.35
-    MinJumpTime: 0.1
-    MaxJumps: 2
-  homingState:
-    player: {fileID: 0}
-    actions: {fileID: 0}
-    ReticleTransform: {fileID: 0}
-    ReticleAnimator: {fileID: 0}
-    Reticle: {fileID: 0}
-    Hud: {fileID: 0}
-    MaxHomingDistance: 15
-    TargetLayer:
-      serializedVersion: 2
-      m_Bits: 2048
-    BlockingLayers:
-      serializedVersion: 2
-      m_Bits: 1
-    FieldOfView: 0.4
-    HomingTrail: {fileID: 1224422401143499461}
-    OverrideSpeed: 0
-    AirDashSpeed: 30
-    AirDashDuration: 0.3
-    AirDashReleaseVelocity: 1
-    HomingTimeOut: 15
-    HomingSpeed: 30
-    HomingReleaseVelocity: 0.2
-    HomingBouncePower: 2.5
-  spinDashState:
-    player: {fileID: 0}
-    actions: {fileID: 0}
-    col: {fileID: 1224422401827757334}
-    spinDashType: 1
-    MaxRevs: 6
-    MaxCharge: 48
-    ChargeDuration: 1
-    ChargeWhileRunning: 0
-  hurtState:
-    player: {fileID: 0}
-    actions: {fileID: 0}
-    PositionOffset: 0.05
-    BackForce: 4
-    UpForce: 7.5
-    StateChangeDelay: 1
-    RespawnDelay: 0.3
+  States:
+  - {fileID: 6662475056557839193}
+  - {fileID: 7725615152741403349}
+  - {fileID: 277643574655577799}
+  - {fileID: 2598968979533799828}
+  - {fileID: 8446136404955943917}
   ClosestTarget: {fileID: 0}
+  ActiveTarget: {fileID: 0}
+  TargetLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  BlockingLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  FieldOfView: 0.4
+  MaxHomingDistance: 15
+  ReticleTransform: {fileID: 0}
+  ReticleAnimator: {fileID: 0}
+  Reticle: {fileID: 0}
+  Hud: {fileID: 0}
+--- !u!114 &6662475056557839193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224422401827757333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e801f9c01310d42a46f71739984fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  actions: {fileID: 0}
+  RollingStartSpeed: 1
+  col: {fileID: 1224422401827757334}
+  CrouchHeight: 0.67
+  CrouchOffset: -0.028
+--- !u!114 &7725615152741403349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224422401827757333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3728668a3d76674c9fec0c60ad8619d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  actions: {fileID: 0}
+  InitialJumpForce: 0.75
+  JumpSpeed: 0.6
+  MaxJumpTime: 0.35
+  MinJumpTime: 0.1
+  MaxJumps: 2
+--- !u!114 &277643574655577799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224422401827757333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a7cfb1b9fac634babfb3c5028674be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  actions: {fileID: 0}
+  HomingTrail: {fileID: 1224422401143499461}
+  OverrideSpeed: 0
+  AirDashSpeed: 30
+  AirDashDuration: 0.3
+  AirDashReleaseVelocity: 1
+  HomingTimeOut: 15
+  HomingSpeed: 30
+  HomingReleaseVelocity: 0.2
+  HomingBouncePower: 2.5
+--- !u!114 &2598968979533799828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224422401827757333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c9439b3f344a141af82def9d8155d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  actions: {fileID: 0}
+  col: {fileID: 1224422401827757334}
+  spinDashType: 1
+  MaxRevs: 6
+  MaxCharge: 48
+  ChargeDuration: 1
+  ChargeWhileRunning: 0
+--- !u!114 &8446136404955943917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224422401827757333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008b65a88bb3ed4438dc27edc22136f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  actions: {fileID: 0}
+  PositionOffset: 0.05
+  BackForce: 4
+  UpForce: 7.5
+  StateChangeDelay: 1
+  RespawnDelay: 0.3
 --- !u!114 &1224422401827757324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20700,7 +20772,7 @@ MonoBehaviour:
   - Name: Hit3
     clip: {fileID: 8300000, guid: f88bb56f89c90c648b224159305466e2, type: 3}
   - Name: Damage
-    clip: {fileID: 8300000, guid: e6337c9adae353a4d8aca06d108f13af, type: 3}
+    clip: {fileID: 8300000, guid: 6a1e39fba6999d54581c5fc457fd2888, type: 3}
 --- !u!114 &1224422401827757323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20780,21 +20852,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeSpline: {fileID: 0}
---- !u!114 &1948153416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224422401827757333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bee5edbec567c7c4ea8247f519560e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxStepHeight: 0.1
-  MinStepHeight: 0.01
-  SpeedThreshold: 10
 --- !u!1 &1224422401915251226
 GameObject:
   m_ObjectHideFlags: 0
@@ -25970,7 +26027,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 17cfa5eaaec17104a9831c2ed1d8de33, type: 2}
+      objectReference: {fileID: 9100000, guid: 9dc1b703734626440a711bf14607ea27, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 607659c01ac54f847b3ffbabb2c1e5bc,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -5785165825867573853, guid: 607659c01ac54f847b3ffbabb2c1e5bc,
         type: 3}
       propertyPath: m_Layer
@@ -27513,15 +27575,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 607659c01ac54f847b3ffbabb2c1e5bc, type: 3}
---- !u!4 &526741396101712802 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1707243787577406375, guid: 607659c01ac54f847b3ffbabb2c1e5bc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1224422400631371781}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5874717374761343608 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4717861441143497341, guid: 607659c01ac54f847b3ffbabb2c1e5bc,
+--- !u!1 &7196726614227853580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 607659c01ac54f847b3ffbabb2c1e5bc,
     type: 3}
   m_PrefabInstance: {fileID: 1224422400631371781}
   m_PrefabAsset: {fileID: 0}
@@ -27543,9 +27599,15 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1224422400631371781}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7196726614227853580 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 607659c01ac54f847b3ffbabb2c1e5bc,
+--- !u!4 &5874717374761343608 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4717861441143497341, guid: 607659c01ac54f847b3ffbabb2c1e5bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1224422400631371781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &526741396101712802 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1707243787577406375, guid: 607659c01ac54f847b3ffbabb2c1e5bc,
     type: 3}
   m_PrefabInstance: {fileID: 1224422400631371781}
   m_PrefabAsset: {fileID: 0}

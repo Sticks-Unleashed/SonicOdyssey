@@ -78,7 +78,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c9645a19bf63d874b9eeb2bc34087fdc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0acb408c94bc33a488603c8e97a83212, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -171,10 +171,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4530142091525295075}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 5ad73762ce970ea46bdb639c9b556249,
+    - target: {fileID: -6559572800532735322, guid: 5ad73762ce970ea46bdb639c9b556249,
         type: 3}
-      propertyPath: m_Name
-      value: obj_checkpoint
+      propertyPath: m_LocalPosition.x
+      value: -2.805
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 5ad73762ce970ea46bdb639c9b556249,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4494806961483fe4c80284d15ff65771, type: 2}
+    - target: {fileID: -5145336999751694684, guid: 5ad73762ce970ea46bdb639c9b556249,
+        type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4841674870672365487, guid: 5ad73762ce970ea46bdb639c9b556249,
+        type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5ad73762ce970ea46bdb639c9b556249,
         type: 3}
@@ -231,32 +246,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -4841674870672365487, guid: 5ad73762ce970ea46bdb639c9b556249,
-        type: 3}
-      propertyPath: m_UpdateWhenOffscreen
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 5ad73762ce970ea46bdb639c9b556249,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 4494806961483fe4c80284d15ff65771, type: 2}
-    - target: {fileID: -6559572800532735322, guid: 5ad73762ce970ea46bdb639c9b556249,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.805
-      objectReference: {fileID: 0}
-    - target: {fileID: 492285351455155079, guid: 5ad73762ce970ea46bdb639c9b556249,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.805
-      objectReference: {fileID: 0}
     - target: {fileID: -2197508229220074665, guid: 5ad73762ce970ea46bdb639c9b556249,
-        type: 3}
-      propertyPath: m_UpdateWhenOffscreen
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -5145336999751694684, guid: 5ad73762ce970ea46bdb639c9b556249,
         type: 3}
       propertyPath: m_UpdateWhenOffscreen
       value: 1
@@ -265,6 +255,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 1.3446487e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5ad73762ce970ea46bdb639c9b556249,
+        type: 3}
+      propertyPath: m_Name
+      value: obj_checkpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 492285351455155079, guid: 5ad73762ce970ea46bdb639c9b556249,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.805
       objectReference: {fileID: 0}
     - target: {fileID: 5102271721581688668, guid: 5ad73762ce970ea46bdb639c9b556249,
         type: 3}

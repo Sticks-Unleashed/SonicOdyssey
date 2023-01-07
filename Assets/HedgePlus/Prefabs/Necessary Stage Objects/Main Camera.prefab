@@ -160,11 +160,24 @@ MonoBehaviour:
   camState: 0
   FollowTarget: {fileID: 0}
   Player: {fileID: 0}
-  MaxDistance: 4
+  MaxDistance: 3.5
   MaxHeight: 0.75
   YOffset: 0.5
-  PositionDamping: 0.07
+  PositionDamping: 0.05
   TransitionSpeed: 3
-  RotationSpeed: 15
+  RotationSpeed: 5
+  MinAngle: 10
+  MinDot: 0.7
   CollisionRadius: 0.1
+  CollidesWith:
+    serializedVersion: 2
+    m_Bits: 1
+  GamepadX: joystick axis 3
+  GamepadY: joystick axis 4
+  MouseX: Mouse X
+  MouseY: Mouse Y
+  OrbitSpeed: 360
+  MouseSensitivity: 1
+  StickSensitivity: 3
+  TargetPosition: {x: 0, y: 0, z: 0}
   UpdateCameraOrientation: 1

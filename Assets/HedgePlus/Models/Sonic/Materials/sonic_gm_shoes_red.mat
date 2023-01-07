@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sonic_gm_shoes_red
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: d212dfc1d625910408e210bb27eb2d42, type: 3}
+  m_ShaderKeywords: _USEREFLECTION_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: 6c31d57516671a743ba81898b57efa4d, type: 3}
+        m_Texture: {fileID: 2800000, guid: dc51c46c8adb4991a1b4a191f2c282a9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6c31d57516671a743ba81898b57efa4d, type: 3}
+        m_Texture: {fileID: 2800000, guid: dc51c46c8adb4991a1b4a191f2c282a9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -84,7 +84,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ReflectionMap:
-        m_Texture: {fileID: 2800000, guid: 01e9106694371204ba92e14aed9d1589, type: 3}
+        m_Texture: {fileID: 2800000, guid: 472f47c5949eaeb4f9967f79b68a5396, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ReflectionMap1:
@@ -92,11 +92,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Rim:
-        m_Texture: {fileID: 2800000, guid: 6c31d57516671a743ba81898b57efa4d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Specular:
-        m_Texture: {fileID: 2800000, guid: 7cbf48b6e12aff447a5b15bfff82d588, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0585718a3c774debace237f235800552, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SubsurfaceColor:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -123,7 +127,7 @@ Material:
     - _OuterEmissionStrength: 0
     - _OuterNormalStrength: 0
     - _Parallax: 0.02
-    - _ReflectionStrength: 1
+    - _ReflectionStrength: 0.135
     - _RimPower: 5
     - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
@@ -131,7 +135,7 @@ Material:
     - _SrcBlend: 1
     - _SubsurfaceModifier: 0
     - _UVSec: 0
-    - _UseReflection: 0
+    - _UseReflection: 1
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:

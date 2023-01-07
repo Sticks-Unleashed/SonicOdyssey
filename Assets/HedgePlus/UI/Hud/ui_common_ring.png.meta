@@ -93,7 +93,7 @@ TextureImporter:
       213: -112604095721331659
     second: ui_common_ring_29
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -113,6 +113,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -121,12 +123,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 1
     aniso: 2
-    mipBias: -100
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -144,11 +146,16 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 8192
     resizeAlgorithm: 0
@@ -159,7 +166,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 8192
     resizeAlgorithm: 0
@@ -170,7 +178,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 8192
     resizeAlgorithm: 0
@@ -181,7 +190,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 8192
     resizeAlgorithm: 0
@@ -192,6 +202,31 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -835,6 +870,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ui_common_ring_22: 220069182629042279
+      ui_common_ring_14: -1964164406824617429
+      ui_common_ring_10: 8228474703190573990
+      ui_common_ring_16: 5110221287440979599
+      ui_common_ring_6: -4983401720083422747
+      ui_common_ring_12: -478903222670233855
+      ui_common_ring_25: 559767070406639659
+      ui_common_ring_23: -333435275374503045
+      ui_common_ring_2: -2396886352928443461
+      ui_common_ring_3: -1627385415566483451
+      ui_common_ring_15: -3023604284165463479
+      ui_common_ring_11: -8446291126239043954
+      ui_common_ring_21: 480608014330648157
+      ui_common_ring_29: -112604095721331659
+      ui_common_ring_1: 2010300379966220792
+      ui_common_ring_7: 4993181177499379150
+      ui_common_ring_24: 4195893623440934916
+      ui_common_ring_20: -8752489038599610573
+      ui_common_ring_28: -9051013361524539688
+      ui_common_ring_9: -3222506466297116091
+      ui_common_ring_18: -3477279188920871440
+      ui_common_ring_26: 9070265277292898593
+      ui_common_ring_27: 6430717948954150480
+      ui_common_ring_13: 8722324735453337551
+      ui_common_ring_17: 6530914105499847546
+      ui_common_ring_19: -4704086768702410221
+      ui_common_ring_5: 8757269680645531904
+      ui_common_ring_8: -3504049148075265213
+      ui_common_ring_4: -1781741996884611293
+      ui_common_ring_0: 8936077724804245911
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

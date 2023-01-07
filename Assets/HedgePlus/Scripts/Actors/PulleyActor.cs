@@ -65,7 +65,7 @@ public class PulleyActor : MonoBehaviour
         {
             while (PulleyPosition < Target)
             {
-                PulleyPosition += Time.deltaTime * Speed;
+                PulleyPosition += Time.fixedDeltaTime * Speed;
                 yield return null;
                 if (PulleyPosition >= Target)
                 {
@@ -79,7 +79,7 @@ public class PulleyActor : MonoBehaviour
         {
             while (PulleyPosition > Target)
             {
-                PulleyPosition -= Time.deltaTime * Speed;
+                PulleyPosition -= Time.fixedDeltaTime * Speed;
                 yield return null;
                 if (PulleyPosition <= Target)
                 {

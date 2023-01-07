@@ -2,36 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+[RequireComponent(typeof(DefaultState))]
 public class PlayerActions : MonoBehaviour
 {
     PlayerController player;
     public PlayerAnimator animator { get; set; }
-    static ActionBase actionBase = new ActionBase(); //Base class for all the actions. This will be used for setting the Player and Actions components of each action without every action having its own.
-    public ActionDefault defaultState;
-    public ActionJump jumpState;
-    public ActionHoming homingState;
-    public ActionSpindash spinDashState;
-    public ActionHurt hurtState;
     ActionBase objectState = new ActionBase(); //Empty action, used for pulleys and ziplines and such
     public static ActionBase currentState; //The current state being updated
+    public ActionBase[] States;
     public int StateIndex { get; set; } //Changes the current animation state depending on Sonic's state
     //public List<Transform> homingTargets = new List<Transform>();
     public Transform ClosestTarget;
+    [HideInInspector] public Transform ActiveTarget;
+    public bool DidDash { get; set; }
+    public LayerMask TargetLayer;
+    public LayerMask BlockingLayers;
+    [Range(0, 1)] public float FieldOfView;
+    public float MaxHomingDistance;
+    public RectTransform ReticleTransform;
+    public Animator ReticleAnimator;
+    public GameObject Reticle;
+    public RectTransform Hud;
 
     private void Start()
     {
         player = GetComponent<PlayerController>();
         animator = GetComponent<PlayerAnimator>();
-        actionBase.player = player;
-        actionBase.actions = this;
-        ChangeState(0);
+        ChangeState(typeof(DefaultState));
     }
 
     private void Update()
     {
         currentState.UpdateState();
-        homingState.BackgroundUpdate();
+        UpdateHomingReticle();
         //Debug.DrawLine(transform.position, ClosestTarget.position);
     }
 
@@ -39,7 +42,7 @@ public class PlayerActions : MonoBehaviour
     {
         currentState.FixedUpdateState();
     }
-
+    /*
     public void ChangeState(int state)
     {
         ///Here we simply set currentState to the state we would like to transition to, then call Initialize.
@@ -69,7 +72,48 @@ public class PlayerActions : MonoBehaviour
         currentState.InitializeState(actionBase);
         StateIndex = state; //This is used for changing states in the animator.
     }
+    */
 
+    public void ChangeState (System.Type type)
+    {
+        ActionBase nextState;
+        bool IsValidState = false;
+        //First we check if the array contains the desired state
+        for (int i = 0; i < States.Length; i++)
+        {
+            if (States[i].GetType() == type)
+            {
+                IsValidState = true;
+                currentState = States[i];
+            }
+        }
+
+        //Now we change states
+        if (IsValidState)
+        {
+            currentState.InitializeState(player, this);
+        } else
+        {
+            Debug.LogError("The given state does not exist.");
+        }
+    }
+    /// <summary>
+    /// Used for checking if a certain state is available before switching to it
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
+    public bool CheckForState (System.Type type)
+    {
+        bool IsValidState = false;
+        for (int i = 0; i < States.Length; i++)
+        {
+            if (States[i].GetType() == type)
+            {
+                IsValidState = true;
+            }
+        }
+        return IsValidState;
+    }
     /// <summary>
     /// Gets the closest object tagged "HomingTarget"
     /// </summary>
@@ -91,7 +135,7 @@ public class PlayerActions : MonoBehaviour
             bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1; //Make sure the target is on screen
             if (TargetDistance < distance && Facing && onScreen)
             {
-                if (!Physics.Linecast(transform.position, target.position, homingState.BlockingLayers))
+                if (!Physics.Linecast(transform.position, target.position, BlockingLayers))
                 {
                     closestTarget = target;
                     distance = TargetDistance;
@@ -105,7 +149,37 @@ public class PlayerActions : MonoBehaviour
     public void UpdateTargets()
     {
         ClosestTarget = null;
-        ClosestTarget = GetClosestTarget(homingState.TargetLayer, homingState.MaxHomingDistance, homingState.FieldOfView);
+        ClosestTarget = GetClosestTarget(TargetLayer, MaxHomingDistance, FieldOfView);
+    }
+
+    public void UpdateHomingReticle()
+    {
+        //This is going to be used for setting the reticle's position and animation, among other things.
+        if (ClosestTarget != null && ActiveTarget != ClosestTarget && !player.Grounded)
+        {
+            if (!Reticle.activeSelf)
+                Reticle.SetActive(true);
+            ReticleAnimator.SetTrigger("Target");
+            animator.PlayTargetSound();
+            ActiveTarget = ClosestTarget;
+        }
+        if (ClosestTarget == null)
+        {
+            ActiveTarget = null;
+        }
+        if (ClosestTarget == null || ActiveTarget == null)
+        {
+            Reticle.SetActive(false);
+        }
+
+        if (Reticle.activeSelf)
+        {
+            ///For setting the reticle's position, we simply convert the target's screen position into canvas space.
+            Vector2 IconPos = Camera.main.WorldToScreenPoint(ActiveTarget.position);
+            Vector2 CanvasPos = new Vector2();
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(Hud, IconPos, null, out CanvasPos);
+            ReticleTransform.localPosition = CanvasPos;
+        }
     }
 }
 #region Action Classes

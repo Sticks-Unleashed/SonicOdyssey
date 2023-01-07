@@ -125,7 +125,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0da91303a2e30b94e947d924237a6d4a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c22418fc22ac4464e930c8b5d7c6c637, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -218,11 +218,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 17082088799462270}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: bbdcb4adfccc250448895d9f92dca5b1,
-        type: 3}
-      propertyPath: m_Name
-      value: cmn_obj_hintring_SD
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bbdcb4adfccc250448895d9f92dca5b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -277,6 +272,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: bbdcb4adfccc250448895d9f92dca5b1,
+        type: 3}
+      propertyPath: m_Name
+      value: cmn_obj_hintring_SD
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbdcb4adfccc250448895d9f92dca5b1, type: 3}

@@ -207,16 +207,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5090340157662864709}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 09bc0c8731500124eaee0ca5c945f33f,
-        type: 3}
-      propertyPath: m_Name
-      value: enm_spina
-      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: 09bc0c8731500124eaee0ca5c945f33f,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 5ff6ba792f6b4654db23442ff04692f3, type: 2}
+      objectReference: {fileID: 9100000, guid: 92e4195ee855de549b6a93a1be701236, type: 2}
     - target: {fileID: -4216859302048453862, guid: 09bc0c8731500124eaee0ca5c945f33f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -271,6 +266,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 09bc0c8731500124eaee0ca5c945f33f,
+        type: 3}
+      propertyPath: m_Name
+      value: enm_spina
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09bc0c8731500124eaee0ca5c945f33f, type: 3}

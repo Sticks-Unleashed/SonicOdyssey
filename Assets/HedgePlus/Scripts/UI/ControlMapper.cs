@@ -6,18 +6,28 @@ using TMPro;
 public class ControlMapper : MonoBehaviour
 {
     InputHandler _input;
+    public PauseMenuControl menuController;
+    public InputPoll poll;
     public AxisMapper AxisInputSetting;
     public ButtonMapper ButtonInputSetting;
     public float VerticalPadding;
     float ButtonStartOffset;
+
     private void Start()
     {
         _input = InputHandler.instance;
+        poll._input = _input;
         SetAxisUI();
         SetButtonUI();
         AxisInputSetting.gameObject.SetActive(false);
         ButtonInputSetting.gameObject.SetActive(false);
     }
+
+    private void OnEnable()
+    {
+
+    }
+
 
     public void SetAxisUI()
     {
@@ -28,11 +38,7 @@ public class ControlMapper : MonoBehaviour
             AxisMapper _axis = Instantiate(AxisInputSetting);
             _axis.transform.SetParent(transform, false);
             _axis.Title.text = _input.axisInputs[i].Name;
-            _axis.KeyboardPositive.text = _input.axisInputs[i].Positive;
-            _axis.KeyboardNegative.text = _input.axisInputs[i].Negative;
-            _axis.GamepadName.text = _input.axisInputs[i].GamepadAxis;
             _axis.EditIndex = i;
-            _axis.mapper = this;
             RectTransform AxisTrans = _axis.GetComponent<RectTransform>();
             AxisTrans.anchoredPosition = InitialTrans.anchoredPosition - new Vector2(0, Padding * i);
             if (i + 1 >= _input.axisInputs.Length)
@@ -50,9 +56,8 @@ public class ControlMapper : MonoBehaviour
             float Padding = InitialRect.rect.height + VerticalPadding;
             ButtonMapper _button = Instantiate(ButtonInputSetting);
             _button.transform.SetParent(transform, false);
+            _button.EditIndex = i;
             _button.Title.text = _input.buttonInputs[i].Name;
-            _button.KeyboardName.text = _input.buttonInputs[i].KeyboardInput;
-            _button.GamepadName.text = _input.buttonInputs[i].GamepadInput;
 
             RectTransform ButtonRect = _button.GetComponent<RectTransform>();
             ButtonRect.anchoredPosition = InitialRect.anchoredPosition - new Vector2(0, Padding * i + ButtonStartOffset);

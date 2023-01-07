@@ -123,7 +123,7 @@ TextureImporter:
       213: -869665255143690880
     second: ui_gp_signal_img_39
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -143,6 +143,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -151,12 +153,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 1
     aniso: 2
-    mipBias: -100
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -174,11 +176,16 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 8192
     resizeAlgorithm: 0
@@ -189,7 +196,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 8192
     resizeAlgorithm: 0
@@ -200,7 +208,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 8192
     resizeAlgorithm: 0
@@ -211,7 +220,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 8192
     resizeAlgorithm: 0
@@ -222,6 +232,31 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1075,6 +1110,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ui_gp_signal_img_7: 8461128329353509150
+      ui_gp_signal_img_31: 3265873462436616017
+      ui_gp_signal_img_3: -1285133304487429862
+      ui_gp_signal_img_8: 8017060454078967824
+      ui_gp_signal_img_0: -7198596028516001259
+      ui_gp_signal_img_37: 5057196582800433121
+      ui_gp_signal_img_30: 1692661566968160291
+      ui_gp_signal_img_35: -1316948229061870154
+      ui_gp_signal_img_5: -2565304667070136763
+      ui_gp_signal_img_39: -869665255143690880
+      ui_gp_signal_img_9: 3115864303657063288
+      ui_gp_signal_img_13: -2695186554192078080
+      ui_gp_signal_img_24: 5234759766261547969
+      ui_gp_signal_img_28: -339092488189260123
+      ui_gp_signal_img_25: 6629863554982399318
+      ui_gp_signal_img_27: 2016959517393937487
+      ui_gp_signal_img_15: -5407335290189889490
+      ui_gp_signal_img_34: -2831102457830444665
+      ui_gp_signal_img_26: -2486338846744531137
+      ui_gp_signal_img_36: 5524553749906713372
+      ui_gp_signal_img_12: -7514159008495475266
+      ui_gp_signal_img_38: -2461130408195863216
+      ui_gp_signal_img_23: 822558541587025415
+      ui_gp_signal_img_22: -7315439429336051941
+      ui_gp_signal_img_2: 6638096497288436691
+      ui_gp_signal_img_33: 8787911473374104172
+      ui_gp_signal_img_11: 6612795994036464441
+      ui_gp_signal_img_19: -3500598526125681532
+      ui_gp_signal_img_16: 6987064362524157653
+      ui_gp_signal_img_21: 2400050856830938718
+      ui_gp_signal_img_18: 766376417757747698
+      ui_gp_signal_img_32: -4493391504944607640
+      ui_gp_signal_img_6: 4256192939441007544
+      ui_gp_signal_img_20: -3646881788114268373
+      ui_gp_signal_img_17: -5612297160474014305
+      ui_gp_signal_img_29: 4196610601880732790
+      ui_gp_signal_img_10: 4350449332903352249
+      ui_gp_signal_img_4: -6478658420881309231
+      ui_gp_signal_img_1: 7625206410862391116
+      ui_gp_signal_img_14: -956941125650312165
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

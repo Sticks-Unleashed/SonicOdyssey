@@ -16,16 +16,16 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Skybox
   - Water
   - UI
   - 
   - 
   - PostProcessing
-  - Hedge+/Player
-  - Hedge+/Object
-  - Hedge+/Target
-  - Hedge+/Ignore Player Collision
+  - Pinball SDK/Player
+  - Pinball SDK/Object
+  - Pinball SDK/Target
+  - Pinball SDK/Ignore Player Collision
   - 
   - 
   - 

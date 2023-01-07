@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sonic_gm_eyeR
-  m_Shader: {fileID: 4800000, guid: 666614bce1d8edf428c8d868ba46960a, type: 3}
+  m_Shader: {fileID: 4800000, guid: 386c3bff9971bd849b6c8a839c3309b5, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: d7485d456488dc342b85ce45c8321e9f, type: 3}
+        m_Texture: {fileID: 2800000, guid: c3ebc9dad37f4972b602587d186d943b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -39,16 +39,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Diffuse:
+        m_Texture: {fileID: 2800000, guid: c3ebc9dad37f4972b602587d186d943b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _InnerEmission:
-        m_Texture: {fileID: 2800000, guid: 04b16d7b973f05c41b8c7c33837271ee, type: 3}
+        m_Texture: {fileID: 2800000, guid: 54ba12a66b8a46a5a9e50118acadabfc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _InnerNormal:
-        m_Texture: {fileID: 2800000, guid: 8bf309d34d8674b408d8601b14338e81, type: 3}
+        m_Texture: {fileID: 2800000, guid: a8dd161653cb28c42bf9dbc8c9ec4d49, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _InnerSpecular:
@@ -72,15 +76,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OuterEmission:
-        m_Texture: {fileID: 2800000, guid: a2b4b22ac492ec943a4fe7571112260b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 08eeb66dc7564262bdbabb501068eeb5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: -0.04, y: -0.07}
     - _OuterNormal:
-        m_Texture: {fileID: 2800000, guid: 411fbb210e9849b4e82bd49a9e5af123, type: 3}
+        m_Texture: {fileID: 2800000, guid: 678002f83e2631b4c9b073754a036dfa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Reflection:
+        m_Texture: {fileID: 2800000, guid: 472f47c5949eaeb4f9967f79b68a5396, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ReflectionMap:
@@ -109,7 +117,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 1
     - _GlossyReflections: 1
-    - _InnerEmissionStrength: 2
+    - _InnerEmissionStrength: 0.54
+    - _InnerNormalScale: 1
     - _InnerNormalStrength: 1
     - _Metallic: 1
     - _Mode: 0
@@ -117,11 +126,13 @@ Material:
     - _Occlusion: 0
     - _OcclusionStrength: 1
     - _OuterEmissionStrength: 2.98
+    - _OuterNormalScale: 1
     - _OuterNormalStrength: 1
     - _Parallax: 0.02
-    - _ReflectionStrength: 0
+    - _ReflectionFalloff: -0.25
+    - _ReflectionStrength: 0.301
     - _RimPower: 5
-    - _Smoothness: 1
+    - _Smoothness: 0.574
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
